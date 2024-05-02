@@ -52,6 +52,7 @@ const useMutation = () => {
       return { results, status };
     } catch (error) {
       setIsLoading(false);
+      console.log(`error: `,error);
       toast.error(
         error instanceof Error ? error.message : "Something went wrong"
       );
