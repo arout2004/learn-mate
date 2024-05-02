@@ -1,7 +1,6 @@
 import axios from "axios";
-import { getCookie } from "cookies-next";
 
-const url = process.env.NEXT_PUBLIC_NODE_ENV === "development" ? "http://localhost:9000" : "";
+const url = process.env.NEXT_PUBLIC_NODE_ENV === "development" ? "http://localhost:9000" : "https://learn-mate-zeta.vercel.app";
 
 type sendOtpProps = {
     email: String;
