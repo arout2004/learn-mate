@@ -133,3 +133,6 @@ app.use("/api/purchases", purchaseRoutes);
 app.listen(port, () => {
   console.log(`Server started successfully at port ${port}`);
 });
+
+
+module.exports = app;
