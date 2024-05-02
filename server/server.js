@@ -127,6 +127,7 @@ app.use("/api/courses", courseRoutes);
 app.use("/api/lectures", lectureRoutes);
 app.use("/api/content", contentRoutes);
 app.use("/api/videos", videoRoutes);
+
 app.use("/api/purchases", purchaseRoutes);
 
 app.listen(port, () => {
