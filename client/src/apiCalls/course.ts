@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const url = process.env.NEXT_PUBLIC_NODE_ENV === "development" ? "http://localhost:9000" : "https://learn-mate-zeta.vercel.app";
+const url = process.env.NEXT_PUBLIC_NODE_ENV === "development" ? "http://localhost:9000" : "https://learn-mate-server.vercel.app";
 
 export const getCourses = async (id: string | null) => {
     const uri = id ? `${url}/api/courses/${id}` : `${url}/api/courses/`;
