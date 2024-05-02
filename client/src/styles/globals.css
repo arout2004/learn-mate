@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+/* //? common styling */
+@layer components {
+  .main-container {
+    @apply container mx-auto px-4 md:px-5 lg:px-7 2xl:px-9;
+  }
+
+  /* Admin panel */
+  .admin-container {
+    @apply container mx-auto px-2 md:px-4 lg:px-5 2xl:px-6;
+  }
+
+  .admin-bg {
+    @apply !bg-white lg:p-5 md:p-4 !p-3 min-[1700px]:p-7 shadow-[0_0.25rem_1.125rem_rgba(75, 70, 92, 0.1)];
+  }
+
+  .admin-g-padding {
+    @apply lg:p-5 md:p-4 !p-3 min-[1700px]:p-7;
+  }
+
+  .admin-gap {
+    @apply gap-4 md:gap-5 lg:gap-6;
+  }
+
+  .admin-card {
+    @apply shadow-[0_0.25rem_1.125rem_rgba(75, 70, 92, 0.1)] bg-white rounded-[10px] p-3 md:p-5;
+  }
+
+  .admin-title {
+    @apply text-lg lg:text-2xl !capitalize !font-medium !text-gray-800;
+  }
+
+  .graph-title {
+    @apply font-semibold text-primary-text text-lg md:text-xl;
+  }
+
+  .delay-animation {
+    @apply !transition-all !ease-in-out !duration-500;
+  }
+
+  .btn-primary {
+    @apply border-[1px] border-blue-900 bg-primary rounded-lg font-medium !important;
+  }
+
+  .btn-warning {
+    @apply border-[1px] border-orange-700 bg-orange-600 !text-white rounded-lg font-medium !important;
+  }
+
+  .btn-danger {
+    @apply border-[1px] border-red-700 bg-red-600 !text-white rounded-lg font-medium !important;
+  }
+
+  .btn-success {
+    @apply border-[1px] border-secondary bg-secondary !text-white rounded-lg font-medium !important;
+  }
+
+  /* Admin panel */
+  .main-spacing {
+    @apply pt-12 md:pt-16 lg:pt-20 2xl:pt-24;
+  }
+
+  .common-transition {
+    @apply transition-all ease-in-out duration-300 !important;
+  }
+
+  .title {
+    @apply text-2xl lg:text-4xl 2xl:text-5xl lg:leading-[3.15rem] 2xl:leading-[3.75rem] capitalize tracking-wide font-bold text-gray-800;
+  }
+
+  .description {
+    @apply tracking-wide capitalize text-gray-800;
+  }
+
+  .btn-primary {
+    @apply bg-primary grid place-items-center text-white tracking-wide capitalize shadow-[rgba(50, _50, _105, _0.15)_0px_2px_5px_0px, _rgba(0, _0, _0, _0.05)_0px_1px_1px_0px] hover:bg-[#164386] transition-all ease-in-out duration-100;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary grid place-items-center text-white tracking-wide capitalize shadow-[rgba(50, _50, _105, _0.15)_0px_2px_5px_0px, _rgba(0, _0, _0, _0.05)_0px_1px_1px_0px] hover:bg-[#07854a] transition-all ease-in-out duration-100;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary py-2 px-4 rounded-md text-white font-semibold tracking-wide capitalize;
+  }
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(calc(40% - 4px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.absolute.right-left-move {
+  animation: moveLeftRight 4s ease-in-out infinite;
+}
+
+
+
+@keyframes moveTopBottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(calc(28% - 2px));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.absolute.top-bottom-move {
+  animation: moveTopBottom 4s ease-in-out infinite;
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-moveRightToLeft {
+  animation: moveRightToLeft infinite linear;
+}
+
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  -webkit-animation: spin 12s linear 0s infinite normal forwards;
+  animation: spin 12s linear 0s infinite normal forwards;
+  transition: all 2s ease-in-out;
+}
+
+.navbar {
+  top: -100px;
+  transition: top 0.9s ease;
+}
+
+.navbar.active {
+  top: 0;
+}
+
+
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(calc(40% - 4px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shape-5 {
+  animation: moveLeftRight 4s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.shape-8 {
+  -webkit-animation: spin 12s linear 0s infinite normal forwards;
+  animation: spin 12s linear 0s infinite normal forwards;
+  transition: all 2s ease-in-out;
+}
