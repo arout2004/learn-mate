@@ -25,6 +25,7 @@ const useMutation = () => {
   const mutation = async (path: string, options?: MutationOptions) => {
     try {
       const token = getAccessToken();
+      console.log("token: ",token);
       const url = options?.BASE_URL || BASE_URL;
       setIsLoading(true);
       const method = options?.method || "POST";

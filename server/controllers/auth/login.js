@@ -9,7 +9,7 @@ const secret = process.env.JWT_SECRET;
 const login = async (req, res) => {
   let success = false;
   try {
-    console.log("FRONTEND_URL: ",process.env.FRONTEND_URL);
+    console.log("FRONTEND_URL: ",process.env.FRONTEND_URL_PROD);
     const { email, password } = req.body;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
